@@ -166,7 +166,7 @@ export const createPDFs = async (providerId: string, chapters: Chapter[], media:
                     const imgElement = $(imgs[i]);
 
                     if (imgElement) {
-                        const imgSrc = imgElement.attr("src");
+                        const imgSrc = imgElement.attr("src") || imgElement.attr("data-src");
                         if (!imgSrc) continue;
 
                         // Get text before and after the image

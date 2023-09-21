@@ -6,7 +6,7 @@ import { fetchCorsProxies } from "./helper/proxies";
 import { createPDFs } from "./lib/createPDF";
 
 fetchCorsProxies().then(async () => {
-    const id = "/series/the-story-of-me-a-boy-versatile-in-housework-taking-care-of-a-solitary-but-beautiful-girl-from-morning-till-night/";
+    const id = "/series/please-leave-me-alone/";
     const info = await providers.novelupdates.info(id);
     console.log(info);
 
@@ -18,5 +18,5 @@ fetchCorsProxies().then(async () => {
 
     console.log("Fetched " + chapters.length + " chapters");
 
-    await createPDFs("novelupdates", chapters, info!).then(console.log);
+    await createPDFs("novelupdates", [chapters[0]], info!).then(console.log);
 });
